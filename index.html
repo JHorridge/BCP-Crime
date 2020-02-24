@@ -21,6 +21,7 @@
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         padding: 10px;
         z-index: 1;
+        margin-bottom: 2rem;
     }
  
     .legend h4 {
@@ -39,6 +40,27 @@
         margin-right: 5px;
         width: 10px;
     }
+
+      .container p {
+          font-size: 21px;
+          letter-spacing: -0.004em;
+          line-height: 1.58;
+          word-break: break-word;
+          font-style: normal;
+          color: rgba(0, 0, 0, 0.84);
+          font-weight: 400;
+      }
+
+      blockquote {
+          font-size: 21px;
+          font-style: italic;
+          letter-spacing: -0.004em;
+          line-height: 1.58;
+          color: rgba(0, 0, 0, 0.84);
+          font-weight: 500;
+          box-shadow: inset 3px 0 0 0 rgba(0, 0, 0, 0.84);
+          padding-left: 2rem;
+      }
 </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
@@ -46,17 +68,11 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><h3>Home </h3><span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
     <div class="container">
-        <div id="map" style="height: 600px; width: 100%; margin-top: 10rem;"></div>
+        <h1 style="font-size: 70px; text-align: center; margin-top: 1rem;">Crime Proximity to BCP Woodland</h1>
+        <div id="map" style="height: 600px; width: 100%; margin-top: 2rem;"></div>
         <div class="legend">
             <h4>Crime Types</h4>
             <div><span style="background-color: #ff0a0a"></span>Violence and Sexual Offences</div>
@@ -65,6 +81,31 @@
             <div><span style="background-color: #00e6da"></span>Vehicle Crime</div>
             <div><span style="background-color: #787878"></span>Other</div>
         </div>
+        <p><b>The following study</b> will examine the connections between crime and distance to woodland in the BCP area.
+            This includes exploring the types of crime are more or less likely to occur in and around woodland areas.
+            The types of crime included in the data set range from shoplifting, possession of a weapon to burglary and anti-social behaviour.
+            These crime types provide us with an overview of the most common crimes investigated by the Police.</p>
+
+        <blockquote>"other factors contribute to either the safety of woodland areas in BCP or the lack of identified crimes."</blockquote>
+
+        <p>QGIS software was used to analyse open data provided by the UK Police Force and Ordnance Survey. Using this software I calculated the distance
+            between crimes and woodland, shown in the graphs displayed via the graphing library Plotly. The results of this case study
+            suggest there is a negative correlation between crime and woodland. In particular the crime types that happen the least in woodland
+            areas are: theft from the person, other crime, possession of a weapon, bike theft, robbery, drugs and shoplifting. On the other hand crimes
+            committed closest to woodland areas are: violence & sexual offences, anti-social behaviour, criminal damage & arson, and vehicle crime. </p>
+
+        <p>While the data suggest a negative correlation between crime and distance to woodland, there are other factors that need to be taken under consideration when
+            interpreting this dataset or other similar datasets. There is possible bias in the data that could compromise the results of the study if they are not taken
+            into account. For example, the nature of some of the crime types makes them extremely unlikely to occur in woodland areas, like criminal damage & arson.
+            In addition there are many other factors that need to be taken into account when examining this dataset. For instance, the crime types cover a range of crimes which
+            are generalised by the police reporting method. Therefore, crime types like anti-social behaviour could include a variety of crimes. Moreover, the data
+            suggests that crimes categorised under ‘anti-social behaviour’ and ‘violence & sexual crime’ occur everywhere, not just near woodland areas. But there
+            is a distinct gap in the data where these crimes start to occur away from woodlands. This suggests that other factors contribute to either the safety
+            of woodland areas in BCP or the lack of identified crimes.</p>
+
+        <p>Overall, the data used in this study presents an opportunity to examine the connections between two features in the BCP landscape. The results suggest
+            that there is a negative association between woodland and crime, but further examination of other data sources is needed to identify if there is a
+            more viable positive or negative connection between these two factors.</p>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiamhvcnJpZGdlIiwiYSI6ImNrNzB0eng5eTAwNmEzaG13cHh4aXVib20ifQ.LPIzi9Tv6BghcdyTwoK71Q';
         var map = new mapboxgl.Map({
